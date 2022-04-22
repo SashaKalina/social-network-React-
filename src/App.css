@@ -19,6 +19,6 @@ background-color: maroon;
 
 .app-wrapper-content{
 	grid-area: c;
-	background-color: maroon;
+	background-color: rgb(181, 181, 181);
 
 }

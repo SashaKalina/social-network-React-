@@ -9,7 +9,7 @@ let initialState = {
     { id: 4, message: "Sveta" },
   ],
   dialogsData: [
-    { id: 1, name: "Sasha" },
+    { id: 1, name: "Sasha"},
     { id: 2, name: "Dima" },
     { id: 3, name: "Pasha" },
     { id: 4, name: "Sveta" },

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import {  follow,  setCurrentPage,  unfollow,  getUsers,} from "redux/users-reducer";
 import Users from "./Users";
 
-const UsersContainer = ({onPageChanged, currentPage, pageSize, totalUsersCount, users, follow, unfollow, getUsers,}) => {
+const UsersContainer = ({onPageChanged, currentPage, pageSize, totalUsersCount, users, follow, unfollow, getUsers, pageNumber}) => {
   useEffect(() => {
     getUsers(currentPage, pageSize);
   }, []);
@@ -20,6 +20,7 @@ const UsersContainer = ({onPageChanged, currentPage, pageSize, totalUsersCount, 
       users={users}
       follow={follow}
       unfollow={unfollow}
+	 
     />
   );
 };
@@ -36,4 +37,4 @@ export default connect(mapStateToProps, {
   unfollow,
   setCurrentPage,
   getUsers,
-})(UsersContainer);
+  })(UsersContainer);

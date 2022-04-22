@@ -2,6 +2,7 @@ import React from "react";
 import DialogItem from "./DialogItem/DialogItem";
 import s from "./Dialogs.module.css";
 import Message from "./Message/Message";
+import Button from "@mui/material/Button";
 
 const Dialogs = (props) => {
   let state = props.dialogsPage;
@@ -36,7 +37,8 @@ const Dialogs = (props) => {
           ></textarea>
         </div>
         <div>
-          <button onClick={addMessage}> Send </button>
+          <Button variant="contained" 
+		  onClick={addMessage}> Send </Button>
         </div>
       </div>
     </div>

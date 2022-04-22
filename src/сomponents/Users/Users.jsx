@@ -2,27 +2,25 @@ import React from "react";
 import styles from "./users.module.css";
 import userPhoto from "assets/images/user.png";
 import { NavLink } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Avatar from "@mui/material/Avatar";
 
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
   let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
-    if (pages.length < 10) {
-      pages.push(i);
-    }
-  }
+	pages.push(i);
+	if (i == 10) break;
+}
 
   return (
-    <div>
+    <div className={styles.users} >
       <div>
         {pages.map((p) => {
           return (
-            <span
-              className={props.currentPage === p && styles.selectedPage}
-              onClick={(e) => {
-                props.onPageChanged(p);
-              }}
-            >
+            <span className={props.currentPage === p && styles.selectedPage}
+              onClick={(e) => {props.onPageChanged(p)}}
+			  >
               {p}
             </span>
           );
@@ -33,29 +31,36 @@ let Users = (props) => {
           <span>
             <div>
               <NavLink to={"./../profile/ + u.id"}>
-                <img
+                <Avatar
+                  img
+                  alt="avatar image"
                   src={u.photos.small != null ? u.photos.small : userPhoto}
-                  className={styles.userPhoto}
+				  sx={{ width: 100, height: 100 }}
+                 // className={styles.userPhoto}
                 />
               </NavLink>
             </div>
             <div>
               {u.followed ? (
-                <button
+                <Button
+                  variant="contained"
+                  size="small"
                   onClick={() => {
                     props.unfollow(u.id);
                   }}
                 >
                   unfollow
-                </button>
+                </Button>
               ) : (
-                <button
+                <Button
+                  variant="contained"
+                  size="small"
                   onClick={() => {
                     props.follow(u.id);
                   }}
                 >
                   follow
-                </button>
+                </Button>
               )}
             </div>
           </span>

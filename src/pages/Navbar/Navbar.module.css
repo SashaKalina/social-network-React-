@@ -1,11 +1,18 @@
-.nav{
-	grid-area: n;
-	background-color: hotpink;
-	padding: 20px;
-	}
-.item a.active{
-		color: gold;
-	}
-.item a{
-	color: rgb(236, 241, 243);
+.nav {
+  grid-area: n;
+  background-color: rgb(110, 91, 91);
+  padding: 20px;
+  text-decoration: none;
+}
+.item a.active {
+  color: gold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.item a {
+  color: rgb(236, 241, 243);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
 }

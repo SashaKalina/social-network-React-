@@ -2,6 +2,13 @@
 	width:150px;
 	height:150px;
 }
+
+.fon{
+	margin-left: 20px;
+}
+.users{
+	margin-left: 10px;
+}
 .selectedPage{
-	font-weight: bold;
+	
 }

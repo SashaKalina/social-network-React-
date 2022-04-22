@@ -1,10 +1,13 @@
 import React from 'react';
 import s from './Header.module.css';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
 	return (
 	<header className={s.header}>
-		<img src='https://www.adobe.com/express/create/media_127a4cd0c28c2753638768caf8967503d38d01e4c.jpeg?width=400&format=jpeg&optimize=medium' />
+		<NavLink to='/profile'> <img className={s.img}
+		 src='https://www.purpledogdesign.com/pddwp/wp-content/uploads/2020/01/43617178595_0c8ac1b22b_b.jpg' /> 
+		 </NavLink>
 		</header>
 		)
 }

@@ -1,8 +1,10 @@
 import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import Button from "@mui/material/Button";
+import TextareaAutosize from "@mui/material/TextareaAutosize";
 
-function MyPosts(props) {
+const MyPosts = (props) => {
   let postsElements = props.posts.map((p) => (
     <Post message={p.message} like={p.like} />
   ));
@@ -21,18 +23,24 @@ function MyPosts(props) {
       <h3>My posts</h3>
       <div>
         <div>
-          <textarea
+          <TextareaAutosize
+            aria-label="minimum height"
+            minRows={3}
+            placeholder="POST"
+            style={{ width: 200 }}
             onChange={onPostChange}
             ref={newPostElement}
             value={props.newPostText}
           />
         </div>
         <div>
-          <button onClick={onAddPost}>Add post </button>
+          <Button variant="contained" onClick={onAddPost}>
+            Add post{" "}
+          </Button>
         </div>
         <div className={s.posts}>{postsElements}</div>
       </div>
     </div>
   );
-}
+};
 export default MyPosts;
